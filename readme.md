@@ -43,6 +43,7 @@ data = {
 response = requests.get(url, data)
 print(response.json())
 ```
+Для того, чтобы добавить пользователя в бота, пользователю. требуется перейти по ссылке https://your_bot_link?start=user_unique_id
 ## Author
 
 * **Skat1005** - *Developer* - [Skat1005](https://github.com/SKAT1005/) - *Python Backend Developer*
