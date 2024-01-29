@@ -14,6 +14,11 @@ class UserCodeVerification(APIView):
             if user_code == code:
                 return Response({'result': True})
             else:
+                user.attempt += 1
+                if user.attempt == 3:
+                    user.code = andom.randint(10000, 100000)
+                    user.attempt = 0
+                user.save()
                 return Response({'result': False})
         except User.DoesNotExist:
             raise Http404
